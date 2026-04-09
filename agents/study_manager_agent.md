@@ -97,14 +97,13 @@ If any FAIL: list blockers, suggest actions.
 4. **Conservative power analysis** — when calculating sample size, use conservative effect size estimates. Better to suggest more participants than fewer.
 5. **BLOCKED ethics status is a hard gate** — cannot proceed to TRACK until resolved
 
+These are in addition to SKILL.md Safety Rules (which apply to all modes).
+
 ---
 
 ## Integration Points
 
-- **From plan mode**: receives experiment design → auto-enters PLAN step with pre-populated fields
-- **From ARS Stage 1**: recognizes RQ Brief + Methodology Blueprint headings → pre-populates PLAN steps 1-4
-- **To validate mode**: after COLLECT, if user has analysis output, prompt to validate
-- **To run mode**: if user needs to run analysis scripts on collected data, hand off to code_runner_agent
+Routed from SKILL.md based on user input (human study keywords → this agent). Can receive pre-populated fields from plan mode or ARS Stage 1 output. After COLLECT, prompts user to validate or hand off to run mode for analysis scripts.
 
 ---
 

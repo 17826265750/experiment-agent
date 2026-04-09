@@ -93,15 +93,7 @@ Two capabilities: **statistical interpretation** and **reproducibility verificat
 
 2. **INTERPRET** — Item-by-item analysis. See `references/statistical_interpretation_guide.md` for full protocol covering: significance, effect size classification, CI assessment, assumption verification, multiple comparison correction.
 
-3. **FALLACY SCAN** — Check 11 known statistical fallacy patterns across three categories. See `references/statistical_interpretation_guide.md` for the full checklist.
-
-   | Category | Fallacies |
-   |----------|-----------|
-   | Structural (data) | Simpson's Paradox, Ecological Fallacy, Berkson's Paradox, Collider Bias |
-   | Inferential (interpretation) | Base Rate Neglect, Regression to the Mean, Survivorship Bias, Look-Elsewhere Effect, Garden of Forking Paths |
-   | Causal (claims) | Correlation != Causation, Reverse Causality |
-
-   Severity: `RED_FLAG` (results may be invalid) / `CAUTION` (needs conditions) / `NOTE` (worth noting)
+3. **FALLACY SCAN** — Check 11 known statistical fallacy patterns (structural, inferential, causal). See `references/statistical_interpretation_guide.md` for the full checklist. All 11 must be checked; report coverage in output.
 
 4. **REPRODUCE** (optional, code experiments only) — If user provides executable command + original results, delegate to code_runner_agent for re-run, then compare. See `references/reproducibility_protocol.md`. Not applicable to human studies.
 
@@ -113,7 +105,7 @@ Two capabilities: **statistical interpretation** and **reproducibility verificat
 
 ## plan Mode (Inline)
 
-Socratic dialogue to help users design experiments before running them.
+Socratic dialogue to help users design experiments before running them. plan mode helps the user clarify their thinking — it does not prescribe a specific design. The user makes all design decisions.
 
 ### Procedure
 
@@ -131,127 +123,12 @@ One question at a time. Multiple choice preferred. If user brings ARS Stage 1 ou
 
 ## Output Formats
 
-All outputs use **Markdown-based structured format** with Material Passport for ARS compatibility.
+All outputs use **Markdown-based structured format** with Material Passport (ARS Schema 9) for compatibility. Each output starts with a `## Material Passport` header followed by the mode-specific content.
 
-### Experiment Result (from run mode)
-
-```markdown
-## Material Passport
-
-- Origin Skill: experiment-agent
-- Origin Mode: run
-- Origin Date: [ISO 8601]
-- Verification Status: UNVERIFIED
-- Version Label: exp_result_v1
-
-## Experiment Result
-
-- **ID**: [unique id]
-- **Type**: [training | analysis | etl | simulation | generic]
-- **Status**: [completed | crashed | timeout | stopped_by_user]
-- **Command**: [executed command]
-- **Working Directory**: [path]
-- **Duration**: [seconds]
-- **Exit Code**: [int]
-
-### Output Files
-
-| File | Size |
-|------|------|
-| [path] | [size] |
-
-### Output Summary
-
-[Auto-generated summary of structured output, if available]
-
-### Anomalies Detected
-
-[List of anomalies detected during monitoring, or "None"]
-```
-
-### Study Status (from manage mode)
-
-```markdown
-## Material Passport
-
-- Origin Skill: experiment-agent
-- Origin Mode: manage
-- Origin Date: [ISO 8601]
-- Verification Status: UNVERIFIED
-- Version Label: study_status_v1
-
-## Study Status
-
-- **ID**: [unique id]
-- **Type**: [survey | experiment | field_study | interview | mixed]
-- **Phase**: [planning | ethics_review | collecting | collected | paused]
-- **Design**: [description]
-- **Progress**: [current_n] / [target_n] ([completion_rate]%)
-- **Timeline**: [start] to [expected_end] — [on_track | behind | ahead]
-
-### Ethics Status
-
-- **Status**: [READY | NEEDS_REVIEW | BLOCKED]
-- **Blocked Items**: [list or "None"]
-
-### Risks
-
-[List of detected risks with suggestions, or "None"]
-
-### Data Readiness
-
-- **Samples**: [n]
-- **Missing Rate**: [rate]
-- **Format Consistent**: [yes/no]
-- **Ready for Analysis**: [yes/no]
-- **Blockers**: [list or "None"]
-```
-
-### Validation Report (from validate mode)
-
-```markdown
-## Material Passport
-
-- Origin Skill: experiment-agent
-- Origin Mode: validate
-- Origin Date: [ISO 8601]
-- Verification Status: VERIFIED
-- Version Label: validation_v1
-
-## Validation Report
-
-- **Source**: [exp_id | external | manual_study]
-- **Overall Confidence**: [SOLID | CAUTION | RED_FLAG]
-
-### Statistical Findings
-
-| Metric | Test | Value | Effect Size | Confidence |
-|--------|------|-------|-------------|------------|
-| [name] | [test] | [stat, p] | [size, class] | [SOLID/CAUTION/RED_FLAG] |
-
-### Warnings
-
-| Type | Detail | Affected |
-|------|--------|----------|
-| [type] | [detail] | [metrics] |
-
-### Fallacy Scan
-
-- **Coverage**: [N]/11 fallacy types checked
-
-| Fallacy | Severity | Detail | Recommendation |
-|---------|----------|--------|----------------|
-| [type] | [RED_FLAG/CAUTION/NOTE] | [detail] | [suggestion] |
-
-### Reproducibility (if applicable)
-
-- **Method**: [re-run with same seed | re-run stochastic | N/A]
-- **Verdict**: [REPRODUCIBLE | PARTIALLY_REPRODUCIBLE | NOT_REPRODUCIBLE | N/A — human study]
-
-| Metric | Original | Re-run | Diff | Status |
-|--------|----------|--------|------|--------|
-| [name] | [value] | [value] | [diff] | [MATCH/WITHIN_TOLERANCE/MISMATCH] |
-```
+See `templates/output_formats.md` for complete templates for all three output types:
+- **Experiment Result** (run mode): Material Passport + ID, type, status, command, output files, anomalies
+- **Study Status** (manage mode): Material Passport + ID, phase, progress, ethics status, risks, data readiness
+- **Validation Report** (validate mode): Material Passport + statistical findings table, warnings, fallacy scan, reproducibility verdict
 
 ---
 
@@ -305,6 +182,7 @@ All outputs use **Markdown-based structured format** with Material Passport for 
 | `references/statistical_interpretation_guide.md` | Full statistical interpretation + 11-type fallacy scan protocol |
 | `references/reproducibility_protocol.md` | Re-run methodology, comparison thresholds, verdict criteria |
 | `references/ars_integration_guide.md` | ARS Material Passport, handoff format, pipeline bridging |
+| `templates/output_formats.md` | Complete Markdown output templates for all three output types |
 
 ---
 

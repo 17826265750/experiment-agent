@@ -140,7 +140,7 @@ Check ALL 11 types for every validation. Report coverage in output ("11/11 check
 - **Detection**: Study design is cross-sectional, correlational, or observational, but language includes "caused", "led to", "resulted in", "improved", "reduced"
 - **When to suspect**: Always check in non-experimental designs
 - **Severity if found**: CAUTION
-- **Reporting note**: flag the specific causal language; suggest associational alternatives ("was associated with", "correlated with")
+- **Reporting note**: flag the specific causal language and note that the study design does not support causal inference. Example associational alternatives exist ("was associated with", "correlated with") but choosing phrasing is an editorial decision for the reviewer.
 
 **11. Reverse Causality**
 - **What**: The assumed direction of causation may be backwards

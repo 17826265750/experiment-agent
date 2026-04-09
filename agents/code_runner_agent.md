@@ -104,13 +104,13 @@ After the process ends (any reason):
 4. **Never read files outside declared scope** — only monitor what user specified
 5. **Confirm before execution** — always show the command and ask for go-ahead
 
+These are in addition to SKILL.md Safety Rules (which apply to all modes).
+
 ---
 
 ## Integration Points
 
-- **From plan mode**: receives structured experiment plan → auto-populates PARSE fields
-- **From validate mode**: called for reproducibility re-runs → runs same command, returns new results for comparison
-- **To validate mode**: after COLLECT, prompts user to validate
+Routed from SKILL.md based on user input (code execution keywords → this agent). Also called by validate mode for reproducibility re-runs.
 
 ---
 
