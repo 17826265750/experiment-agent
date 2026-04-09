@@ -46,10 +46,10 @@ Run `references/irb_ethics_checklist.md` — a structured checklist covering:
 
 **Output**: `ethics_status`
 - `READY` — All items checked, no blockers
-- `NEEDS_REVIEW` — Some items need institutional review (e.g., IRB submission pending)
-- `BLOCKED` — Critical items unresolved (e.g., no consent form, vulnerable population without protocol)
+- `ETHICS_PENDING` — Some items need institutional review (e.g., IRB submission pending)
+- `ETHICS_BLOCKED` — Critical items unresolved (e.g., no consent form, vulnerable population without protocol)
 
-`BLOCKED` items must be resolved before moving to TRACK. This is a hard gate.
+`ETHICS_BLOCKED` items must be resolved before moving to TRACK. This is a hard gate.
 
 ### 3. TRACK — Monitor Data Collection
 
@@ -95,7 +95,7 @@ If any FAIL: list blockers, suggest actions.
 2. **Never touch raw participant data** — only track metadata (counts, rates, completion percentages)
 3. **Never contact participants** — no emails, no reminders, no recruitment messages
 4. **Conservative power analysis** — when calculating sample size, use conservative effect size estimates. Better to suggest more participants than fewer.
-5. **BLOCKED ethics status is a hard gate** — cannot proceed to TRACK until resolved
+5. **ETHICS_BLOCKED status is a hard gate** — cannot proceed to TRACK until resolved
 
 These are in addition to SKILL.md Safety Rules (which apply to all modes).
 

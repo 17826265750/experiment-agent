@@ -97,7 +97,7 @@ Two capabilities: **statistical interpretation** and **reproducibility verificat
 
 4. **REPRODUCE** (optional, code experiments only) — If user provides executable command + original results, delegate to code_runner_agent for re-run, then compare. See `references/reproducibility_protocol.md`. Not applicable to human studies.
 
-5. **REPORT** — Produce validation report in Markdown structured format (see Output Formats below).
+5. **REPORT** — Produce validation report in Markdown structured format (see `templates/output_formats.md`).
 
 **Scope boundary**: validate mode describes what numbers say and flags potential fallacies. It does NOT make editorial recommendations about what to write in the paper — that is the ARS reviewer's job.
 

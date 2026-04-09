@@ -150,6 +150,14 @@ Check ALL 11 types for every validation. Report coverage in output ("11/11 check
 
 ---
 
+## Relationship to ARS Logical Fallacies Catalog
+
+ARS `deep-research/references/logical_fallacies.md` contains a broader 32-type catalog covering formal, informal, and rhetorical fallacies. This guide's 11-type list focuses specifically on **statistical and methodological** fallacies relevant to experiment validation. 7 types overlap (Simpson's Paradox, Ecological Fallacy, Survivorship Bias, Base Rate Neglect, Regression to Mean, Correlation != Causation, Reverse Causality). When both skills are loaded, this guide takes precedence for experiment result validation; ARS's catalog applies to broader argument evaluation in paper review.
+
+**Severity mapping to ARS terminology**: experiment-agent's `RED_FLAG` corresponds to issues ARS would classify as requiring mandatory revision. `CAUTION` corresponds to issues ARS would flag for author attention. `NOTE` corresponds to optional commentary.
+
+---
+
 ## Output Template
 
-See SKILL.md "Validation Report" output format for the Markdown template.
+See `templates/output_formats.md` "Validation Report" section for the Markdown template.

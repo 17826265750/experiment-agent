@@ -6,8 +6,8 @@ Structured checklist for study_manager_agent ETHICS phase. Agent presents each i
 
 - Present one category at a time
 - For each item, record: PASS / NEEDS_ACTION / NOT_APPLICABLE
-- Any NEEDS_ACTION in categories 1-3 → ethics_status: BLOCKED
-- Any NEEDS_ACTION in categories 4-6 → ethics_status: NEEDS_REVIEW
+- Any NEEDS_ACTION in categories 1-3 → ethics_status: ETHICS_BLOCKED
+- Any NEEDS_ACTION in categories 4-6 → ethics_status: ETHICS_PENDING
 - All PASS or NOT_APPLICABLE → ethics_status: READY
 
 ---
