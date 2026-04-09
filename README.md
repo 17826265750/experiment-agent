@@ -3,6 +3,8 @@
 ![Version](https://img.shields.io/badge/version-1.0-blue)
 ![License](https://img.shields.io/badge/license-CC--BY--NC--4.0-green)
 
+[繁體中文版](README.zh-TW.md)
+
 A Claude Code skill for executing, monitoring, interpreting, and verifying experiments in academic research.
 
 ## What It Does
