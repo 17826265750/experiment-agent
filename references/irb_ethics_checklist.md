@@ -7,8 +7,11 @@ Structured checklist for study_manager_agent ETHICS phase. Agent presents each i
 - Present one category at a time
 - For each item, record: PASS / NEEDS_ACTION / NOT_APPLICABLE
 - Any NEEDS_ACTION in categories 1-3 → ethics_status: ETHICS_BLOCKED
-- Any NEEDS_ACTION in categories 4-6 → ethics_status: ETHICS_PENDING
-- All PASS or NOT_APPLICABLE → ethics_status: READY
+- Any applicable NEEDS_ACTION in category 4 → ethics_status: ETHICS_BLOCKED
+- Category 5.1 missing required approval/exemption → ethics_status: ETHICS_PENDING
+- Any NEEDS_ACTION in category 5.2-6.4 → ethics_status: ETHICS_PENDING
+- `ETHICS_PENDING` means planning may continue, but participant recruitment and data collection cannot start until status becomes `READY`
+- All required items PASS or NOT_APPLICABLE, and institutional approval is `Approved` or `Exempt` when required → ethics_status: READY
 
 ---
 
@@ -16,13 +19,13 @@ Structured checklist for study_manager_agent ETHICS phase. Agent presents each i
 
 | # | Item | Check |
 |---|------|-------|
-| 1.1 | Written informed consent form prepared | Required for all studies involving human participants |
+| 1.1 | Consent pathway documented | Required for all studies involving human participants; signed, digital, or IRB-approved waiver/implied consent depending on study type |
 | 1.2 | Consent form in participant-accessible language | No jargon; translated if needed |
 | 1.3 | Consent form describes: purpose, procedures, duration | Must be explicit |
 | 1.4 | Consent form describes: risks and benefits | Even if minimal risk |
 | 1.5 | Consent form states: voluntary participation, right to withdraw | Must be unconditional |
 | 1.6 | Consent form states: data handling and confidentiality | How data will be stored, who has access |
-| 1.7 | For online studies: digital consent mechanism | Click-through or e-signature |
+| 1.7 | For online studies: appropriate consent mechanism | Click-through, e-signature, information sheet, or IRB-approved implied consent |
 | 1.8 | For minors (< 18): parental consent + child assent | Both required |
 
 ## Category 2: Privacy and Data Protection (CRITICAL)

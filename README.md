@@ -51,7 +51,7 @@ ARS Stage 1 RESEARCH  →  you get RQ Brief + Methodology Blueprint
         ↓
   [pause ARS pipeline]
         ↓
-  experiment-agent     →  plan → run/manage → validate → get verified results
+  experiment-agent     →  plan → run/manage → validate → get analyzed or verified results
         ↓
   [resume ARS pipeline]
         ↓

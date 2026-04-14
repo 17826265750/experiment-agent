@@ -49,7 +49,7 @@ ARS Stage 1 研究      →  取得 RQ Brief + Methodology Blueprint
         ↓
   [暫停 ARS pipeline]
         ↓
-  experiment-agent     →  plan → run/manage → validate → 取得驗證過的結果
+  experiment-agent     →  plan → run/manage → validate → 取得分析或驗證過的結果
         ↓
   [繼續 ARS pipeline]
         ↓
