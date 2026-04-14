@@ -49,7 +49,7 @@ For each statistical result, assess:
 | t-test | Normality | n < 30 per group and no normality test reported |
 | t-test | Equal variance | No Levene's test and group sizes differ > 2:1 |
 | ANOVA | Normality + homogeneity | Same as t-test; additionally check sphericity for RM |
-| Chi-squared | Expected frequencies >= 5 | Any cell < 5 → use Fisher's exact |
+| Chi-squared | Expected frequencies >= 5 | Any cell < 5 → for 2x2 tables use Fisher's exact; for larger tables use an exact/Monte Carlo approach or collapse categories with justification |
 | Regression | Linearity, normality of residuals, homoscedasticity | No diagnostic plots reported |
 | Correlation | Both variables continuous, linearity | Pearson used on ordinal data |
 

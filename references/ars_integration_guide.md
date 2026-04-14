@@ -33,15 +33,17 @@ All experiment-agent outputs include a **Material Passport** header (ARS Schema 
 - Origin Skill: experiment-agent
 - Origin Mode: [run | manage | validate | plan]
 - Origin Date: [ISO 8601 timestamp]
-- Verification Status: [UNVERIFIED | VERIFIED]
-- Version Label: [exp_result_v1 | study_status_v1 | validation_v1]
+- Verification Status: [UNVERIFIED | ANALYZED | VERIFIED]
+- Version Label: [exp_result_v1 | study_status_v1 | validation_v1 | code_plan_v1 | study_protocol_v1]
 ```
 
 **Verification Status rules:**
 - `run` mode output → `UNVERIFIED` (results not yet validated)
 - `manage` mode output → `UNVERIFIED` (data collected but not analyzed)
-- `validate` mode output → `VERIFIED` (has been through statistical interpretation + optional reproducibility check)
-- After validate mode processes a run/manage output, the original output's passport can be updated to `VERIFIED`
+- `plan` mode output → `UNVERIFIED` (design artifact only; nothing has been executed yet)
+- `validate` mode output without a successful reproducibility re-run → `ANALYZED` (statistical interpretation completed, but execution-level verification is absent, not applicable, or failed)
+- `validate` mode output with a successful reproducibility re-run → `VERIFIED`
+- Only upgrade a prior `run` artifact to `VERIFIED` after a successful reproducibility re-run. If re-run is skipped, not applicable, partial, or fails, keep the original artifact at `UNVERIFIED` and attach the separate validation report.
 
 **Optional fields** (include when available):
 - `Integrity Pass Date`: timestamp when validate mode completed

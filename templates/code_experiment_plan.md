@@ -1,5 +1,13 @@
 # Code Experiment Plan
 
+## Material Passport
+
+- Origin Skill: experiment-agent
+- Origin Mode: plan
+- Origin Date: [ISO 8601]
+- Verification Status: UNVERIFIED
+- Version Label: code_plan_v1
+
 ## Experiment Overview
 
 - **Title**: [descriptive name]

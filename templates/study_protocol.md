@@ -1,5 +1,13 @@
 # Study Protocol
 
+## Material Passport
+
+- Origin Skill: experiment-agent
+- Origin Mode: plan
+- Origin Date: [ISO 8601]
+- Verification Status: UNVERIFIED
+- Version Label: study_protocol_v1
+
 ## Study Overview
 
 - **Title**: [descriptive name]

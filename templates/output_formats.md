@@ -1,6 +1,6 @@
 # Output Format Templates
 
-All outputs use Markdown-based structured format with Material Passport for ARS compatibility.
+All outputs use Markdown-based structured format with Material Passport for ARS compatibility. Planning templates in `code_experiment_plan.md` and `study_protocol.md` follow the same rule.
 
 ## Experiment Result (from run mode)
 
@@ -84,7 +84,7 @@ All outputs use Markdown-based structured format with Material Passport for ARS 
 - Origin Skill: experiment-agent
 - Origin Mode: validate
 - Origin Date: [ISO 8601]
-- Verification Status: VERIFIED
+- Verification Status: [ANALYZED | VERIFIED]
 - Version Label: validation_v1
 
 ## Validation Report
@@ -114,8 +114,8 @@ All outputs use Markdown-based structured format with Material Passport for ARS 
 
 ### Reproducibility (if applicable)
 
-- **Method**: [re-run with same seed | re-run stochastic | N/A]
-- **Verdict**: [REPRODUCIBLE | PARTIALLY_REPRODUCIBLE | NOT_REPRODUCIBLE | N/A — human study]
+- **Method**: [re-run deterministic | re-run stochastic | re-run environment-sensitive | not run | N/A]
+- **Verdict**: [REPRODUCIBLE | PARTIALLY_REPRODUCIBLE | NOT_REPRODUCIBLE | CANNOT_VERIFY | N/A]
 
 | Metric | Original | Re-run | Diff | Status |
 |--------|----------|--------|------|--------|

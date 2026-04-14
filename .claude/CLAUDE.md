@@ -30,6 +30,6 @@ A Claude Code skill for experiment execution, monitoring, statistical interpreta
 
 ## Version Info
 - **Version**: 1.0
-- **Last Updated**: 2026-04-09
+- **Last Updated**: 2026-04-14
 - **Author**: Cheng-I Wu
 - **License**: CC-BY-NC 4.0

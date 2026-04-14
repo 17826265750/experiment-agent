@@ -1,5 +1,18 @@
 # Changelog
 
+## Unreleased
+
+### Contract Fixes
+
+- Clarified `validate` output semantics: `Verification Status` is now `ANALYZED` unless a successful reproducibility re-run upgrades it to `VERIFIED`
+- Added Material Passport headers to `plan` mode templates (`code_experiment_plan.md`, `study_protocol.md`)
+- Fixed reproducibility guidance for zero-baseline metrics by using a symmetric denominator with epsilon protection
+- Reclassified hardware/OS-sensitive runs as `environment-sensitive` comparisons instead of blanket `not applicable`
+- Added `CANNOT_VERIFY` and environment-sensitive cases to the documented validation/reproducibility output contract
+- Tightened ethics gating so only `READY` can enter study tracking, while `ETHICS_PENDING` still blocks participant recruitment and data collection
+- Relaxed consent wording to allow IRB-approved digital, implied, or waived consent paths where appropriate
+- Corrected the chi-squared fallback guidance so Fisher's exact is limited to 2x2 tables
+
 ## v1.0 (2026-04-09)
 
 ### Initial Release
