@@ -3,7 +3,7 @@ name: experiment-agent
 description: "Experiment executor and monitor for academic research. 2-agent system covering code experiments (ML training, statistical analysis, ETL, simulation) and human studies (surveys, field studies, interviews). 4 modes: run (execute + monitor code), manage (track human studies), validate (statistical interpretation + reproducibility verification), plan (Socratic experiment design). Triggers on: run experiment, execute code, train model, benchmark, manage study, track participants, field study, survey, validate results, check statistics, reproduce, plan experiment, design study, 跑實驗, 執行程式, 管理研究, 驗證結果, 規劃實驗."
 metadata:
   version: "1.0"
-  last_updated: "2026-04-09"
+  last_updated: "2026-04-14"
   author: "Cheng-I Wu"
   license: "CC-BY-NC 4.0"
   status: active
@@ -95,9 +95,9 @@ Two capabilities: **statistical interpretation** and **reproducibility verificat
 
 3. **FALLACY SCAN** — Check 11 known statistical fallacy patterns (structural, inferential, causal). See `references/statistical_interpretation_guide.md` for the full checklist. All 11 must be checked; report coverage in output.
 
-4. **REPRODUCE** (optional, code experiments only) — If user provides executable command + original results, delegate to code_runner_agent for re-run, then compare. See `references/reproducibility_protocol.md`. Not applicable to human studies.
+4. **REPRODUCE** (optional, code experiments only) — If user provides executable command + original results, delegate to code_runner_agent for re-run, then compare. See `references/reproducibility_protocol.md`. Not applicable to human studies or non-rerunnable external systems.
 
-5. **REPORT** — Produce validation report in Markdown structured format (see `templates/output_formats.md`).
+5. **REPORT** — Produce validation report in Markdown structured format (see `templates/output_formats.md`). Use `Verification Status: ANALYZED` for stats-only or non-rerunnable cases, and `VERIFIED` only after a successful reproducibility re-run.
 
 **Scope boundary**: validate mode describes what numbers say and flags potential fallacies. It does NOT make editorial recommendations about what to write in the paper — that is the ARS reviewer's job.
 
@@ -125,10 +125,14 @@ One question at a time. Multiple choice preferred. If user brings ARS Stage 1 ou
 
 All outputs use **Markdown-based structured format** with Material Passport (ARS Schema 9) for compatibility. Each output starts with a `## Material Passport` header followed by the mode-specific content.
 
-See `templates/output_formats.md` for complete templates for all three output types:
+See `templates/output_formats.md` for complete templates for the three execution/validation outputs:
 - **Experiment Result** (run mode): Material Passport + ID, type, status, command, output files, anomalies
 - **Study Status** (manage mode): Material Passport + ID, phase, progress, ethics status, risks, data readiness
 - **Validation Report** (validate mode): Material Passport + statistical findings table, warnings, fallacy scan, reproducibility verdict
+
+Plan mode outputs use separate templates and also carry Material Passport:
+- **Code Experiment Plan** (plan mode, code path): `templates/code_experiment_plan.md`
+- **Study Protocol** (plan mode, human-study path): `templates/study_protocol.md`
 
 ---
 
@@ -198,4 +202,4 @@ See `references/ars_integration_guide.md` for details.
 
 ---
 
-*Experiment Agent v1.0 | 2026-04-09 | CC-BY-NC 4.0 | Cheng-I Wu*
+*Experiment Agent v1.0 | 2026-04-14 | CC-BY-NC 4.0 | Cheng-I Wu*

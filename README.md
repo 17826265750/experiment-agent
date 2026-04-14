@@ -39,7 +39,7 @@ Lu et al. (2026, *Nature*) demonstrated an Experiment Progress Manager for auton
 This skill works independently. It also integrates optionally with [Academic Research Skills (ARS)](https://github.com/Imbad0202/academic-research-skills):
 
 - Reads ARS Stage 1 output (RQ Brief, Methodology Blueprint) to pre-populate experiment design
-- Produces Material Passport-compatible output for ARS Stage 2 consumption
+- Produces Material Passport-compatible output, including an explicit verification status, for ARS Stage 2 consumption
 - ARS requires zero modification — the user bridges manually
 
 ### When to use with ARS
@@ -78,7 +78,7 @@ claude
 
 **Step 3**: Paste the relevant ARS Stage 1 output (RQ Brief, Methodology Blueprint) into the session. The agent will auto-detect the ARS headings and pre-populate your experiment plan.
 
-**Step 4**: After your experiments are done and validated, copy the output (which includes a Material Passport header) back into your ARS session to continue Stage 2.
+**Step 4**: After your experiments are done and validated, copy the output (which includes a Material Passport header and verification status) back into your ARS session to continue Stage 2.
 
 > You can also add this skill to any project via `.claude/skills/` symlink — see [Claude Code docs](https://docs.anthropic.com/en/docs/claude-code) for skill installation.
 
