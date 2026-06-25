@@ -1,0 +1,17 @@
+{
+  "name": "experiment-agent",
+  "owner": {
+    "name": "gsh",
+    "url": "https://github.com/17826265750"
+  },
+  "description": "Experiment Agent — execute, monitor, interpret, and verify experiments for academic research.",
+  "plugins": [
+    {
+      "name": "experiment-agent",
+      "source": "./",
+      "description": "1 skill, 4 modes: run (code execution + monitoring), manage (human study tracking), validate (statistical interpretation + 11-type fallacy scan), plan (Socratic experiment design). Integrates with ARS pipeline between Stage 1 and Stage 2.",
+      "version": "1.0.0",
+      "license": "CC-BY-NC-4.0"
+    }
+  ]
+}

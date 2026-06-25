@@ -1,35 +1,55 @@
 # Experiment Agent
 
-A Claude Code skill for experiment execution, monitoring, statistical interpretation, and reproducibility verification.
+A Claude Code skill for executing, monitoring, interpreting, and verifying experiments in academic research.
 
-## Skill Overview
+## Available Modes
 
-| Skill | Purpose | Key Modes |
-|-------|---------|-----------|
-| `experiment-agent` v1.0 | Execute + monitor experiments | run, manage, validate, plan |
+| Mode | Purpose | Trigger Keywords |
+|------|---------|-----------------|
+| `run` | Execute code + monitor process | run experiment, execute code, train model, benchmark, 跑實驗, 執行程式 |
+| `manage` | Plan + track human studies | manage study, track participants, field study, survey, 管理研究, 追蹤參與者 |
+| `validate` | Statistical interpretation + reproducibility | validate results, check statistics, reproduce, 驗證結果, 檢查統計 |
+| `plan` | Socratic experiment design | plan experiment, design study, what should I test, 規劃實驗, 設計研究 |
 
-## Routing Rules
+## Quick Start
 
-1. **run vs manage**: run = code experiments (scripts, training, analysis). manage = human studies (surveys, interviews, field work). If unclear, ask user.
-2. **validate**: Works on results from any source — this agent's outputs, external files, or ARS pipeline data. Does statistical interpretation + optional reproducibility re-run.
-3. **plan**: Socratic dialogue to design experiments before running them. If user brings ARS Stage 1 output, pre-populates from RQ Brief and Methodology Blueprint.
+```
+Run my training: python train.py --epochs 50
+Help me manage my survey study
+Validate these regression results
+Help me design an experiment
+```
+
+## Slash Commands
+
+| Command | Mode |
+|---------|------|
+| `/exp-run` | run — code execution + monitoring |
+| `/exp-manage` | manage — human study tracking |
+| `/exp-validate` | validate — statistical interpretation |
+| `/exp-plan` | plan — Socratic experiment design |
 
 ## ARS Integration
 
-- This skill works independently. No ARS dependency.
-- When used with ARS: all outputs include Material Passport (Schema 9) for compatibility.
-- ARS requires zero modification. The user bridges manually.
+Fits between ARS Stage 1 (RESEARCH) and Stage 2 (WRITE):
 
-## Key Rules
+```
+ARS Stage 1 RESEARCH  →  RQ Brief + Methodology Blueprint
+        ↓
+  experiment-agent     →  plan → run/manage → validate → verified results
+        ↓
+ARS Stage 2 WRITE     →  write paper with experiment results
+```
 
-- All anomaly detections are ADVISORY (user decides)
-- Only execute user-specified commands
-- Never auto-retry, never auto-kill (except hard timeout)
-- Statistical interpretation is descriptive, not editorial
-- Ethics checklist items are hard gates for human studies
+## Safety Rules
+
+1. Only executes user-specified commands — never auto-generates or modifies code
+2. Never auto-retries crashed experiments
+3. Never touches raw participant data
+4. Statistical interpretation is descriptive — never concludes
 
 ## Version Info
-- **Version**: 1.0
-- **Last Updated**: 2026-04-14
-- **Author**: Cheng-I Wu
-- **License**: CC-BY-NC 4.0
+
+- Version: 1.0.0
+- License: CC-BY-NC 4.0
+- Author: Cheng-I Wu

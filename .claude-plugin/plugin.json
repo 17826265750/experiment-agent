@@ -1,0 +1,20 @@
+{
+  "name": "experiment-agent",
+  "version": "1.0.0",
+  "description": "Experiment executor and monitor for academic research. 4 modes: run (code execution + monitoring), manage (human study tracking), validate (statistical interpretation + reproducibility), plan (Socratic experiment design).",
+  "author": {
+    "name": "Cheng-I Wu",
+    "url": "https://github.com/Imbad0202"
+  },
+  "homepage": "https://github.com/17826265750/experiment-agent",
+  "repository": "https://github.com/17826265750/experiment-agent",
+  "license": "CC-BY-NC-4.0",
+  "keywords": [
+    "experiment",
+    "research",
+    "statistics",
+    "reproducibility",
+    "monitoring",
+    "academic"
+  ]
+}
